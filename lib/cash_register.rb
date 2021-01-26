@@ -32,6 +32,9 @@ class CashRegister
     @items
   end
 
+  def void_last_transaction
+    @last_item_price.delete
+  end
 
 
 

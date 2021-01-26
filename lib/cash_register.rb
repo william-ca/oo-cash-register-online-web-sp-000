@@ -14,9 +14,14 @@ class CashRegister
   end
 
   def apply_discount
-    self.total -= ((self.discount/100.0)*self.total)
-    success_message = "After the discount, the total comes to $#{self.total.to_i}."
-    success_message
+    if self.discount > 0
+      self.total -= ((self.discount/100.0)*self.total)
+      success_message = "After the discount, the total comes to $#{self.total.to_i}."
+      success_message
+    else
+      fail_message = "There is no discount to apply."
+      fail_message
+    end
   end
 
 
